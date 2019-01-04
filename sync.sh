@@ -112,6 +112,7 @@ push_image(){
     DOCKERHUB_IMAGE=$2
     docker pull ${GCR_IMAGE}
     docker tag ${GCR_IMAGE} ${DOCKERHUB_IMAGE}
+    docker login
     docker push ${DOCKERHUB_IMAGE}
     echo "$IMAGE_TAG_SHA" > ${IMAGE_NAME}/${i}
     sed -i  "1i\- ${DOCKERHUB_IMAGE}"  CHANGELOG.md
