@@ -1,0 +1,13 @@
+---
+last_check:
+  etag: '"bf50eb35eba4c5a9da83d267d0a631db"'
+  version: 1.8.9
+  at: 1546582061
+checked_completion: true
+completion_version: 1.8.9
+endpoints:
+  https://api.travis-ci.org/:
+    access_token: f8gwzjJLEjLopMn6mCnG4g
+repos:
+  HsiaChubby/mirrorgcrio:
+    endpoint: https://api.travis-ci.org/
