@@ -12,7 +12,7 @@ git_init(){
     git config --global user.name "hsiachubby@gmail.com"
     git config --global user.email hsiachubby@gmail.com
     git remote rm origin
-    git remote add origin github.com/HsiaChubby/mirrorgcrio.git
+    git remote add origin git@github.com:HsiaChubby/mirrorgcrio.git
     git pull
     if git branch -a |grep 'origin/develop' &> /dev/null ;then
         git checkout develop
