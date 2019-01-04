@@ -12,7 +12,7 @@ branches:
 install:
 - git remote -v
 script:
-- "bash  ./sync.sh 10"
+- "./sync.sh"
 before_install:
 - export start_time=$(date +%s)
 - mkdir -p ~/.docker
