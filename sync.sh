@@ -12,7 +12,7 @@ git_init(){
     git config --global user.name "hsiachubby@gmail.com"
     git config --global user.email hsiachubby@gmail.com
     git remote rm origin
-    git remote add origin github.com/HsiaChubby/mirrorgcrio.git
+    git remote add origin git@github.com:HsiaChubby/mirrorgcrio.git
     git pull
     if git branch -a |grep 'origin/develop' &> /dev/null ;then
         git checkout develop
@@ -112,7 +112,6 @@ push_image(){
     DOCKERHUB_IMAGE=$2
     docker pull ${GCR_IMAGE}
     docker tag ${GCR_IMAGE} ${DOCKERHUB_IMAGE}
-    docker login
     docker push ${DOCKERHUB_IMAGE}
     echo "$IMAGE_TAG_SHA" > ${IMAGE_NAME}/${i}
     sed -i  "1i\- ${DOCKERHUB_IMAGE}"  CHANGELOG.md
