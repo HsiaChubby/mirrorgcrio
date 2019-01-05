@@ -12,7 +12,7 @@ branches:
 install:
 - git remote -v
 before_script:
-- docker login -u=hsiachubby -p=xia_jun*901210
+- docker login -u=hsiachubby --password-stdin
 script:
 - "./sync.sh"
 before_install:
