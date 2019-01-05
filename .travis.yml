@@ -11,6 +11,8 @@ branches:
   - master
 install:
 - git remote -v
+before_script:
+- docker login
 script:
 - "./sync.sh"
 before_install:
