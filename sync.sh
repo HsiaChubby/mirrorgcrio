@@ -22,6 +22,7 @@ git_init(){
         git checkout -b develop
         git pull origin develop
     fi
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 }
 
 git_commit(){
