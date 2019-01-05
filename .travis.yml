@@ -11,10 +11,11 @@ branches:
   - master
 install:
 - git remote -v
-before_install:
-- export start_time=$(date +%s)
-- mkdir -p ~/.docker
-- mkdir -p ~/.ssh
+before_script:
+- docker logout
+- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+script:
+- "./sync.sh"
 before_install:
 - export start_time=$(date +%s)
 - mkdir -p ~/.docker
@@ -28,5 +29,3 @@ before_install:
 - chmod 600 ~/.docker/config.json
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
-script:
-- "./sync.sh"
