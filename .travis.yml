@@ -12,13 +12,10 @@ branches:
 install:
 - git remote -v
 before_script:
-- docker login -u=hsiachubby --password-stdin
+- docker logout
+- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 script:
 - "./sync.sh"
-before_install:
-- export start_time=$(date +%s)
-- mkdir -p ~/.docker
-- mkdir -p ~/.ssh
 before_install:
 - export start_time=$(date +%s)
 - mkdir -p ~/.docker
